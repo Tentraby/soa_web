@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Domain.Empleado>
+
+@{
+    ViewData["Title"] = "Empleados";
+}
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Apellido
+                    </th>
+                    <th>
+                        Numero de Empleado
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.Apellidos</td>
+                        <td>@item.NumEmpleado</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
