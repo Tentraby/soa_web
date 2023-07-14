@@ -19,6 +19,15 @@ namespace Domain
         [Required]
         [StringLength(100)]
         public string Apellidos { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string email { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string password { get; set;}
+        
+
 
     }
 }

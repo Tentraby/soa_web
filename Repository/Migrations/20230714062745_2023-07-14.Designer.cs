@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository.DBContext;
 
@@ -11,9 +12,10 @@ using Repository.DBContext;
 namespace Repository.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230714062745_2023-07-14")]
+    partial class _20230714
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,7 +66,7 @@ namespace Repository.Migrations
                     b.Property<DateTime>("Fecha_Liberacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdEmpleado")
+                    b.Property<int>("NumEmpleado")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -115,7 +117,7 @@ namespace Repository.Migrations
                 {
                     b.HasBaseType("Domain.Persona");
 
-                    b.Property<int>("IdEmpleado")
+                    b.Property<int>("NumEmpleado")
                         .HasColumnType("int");
 
                     b.ToTable("Personas");

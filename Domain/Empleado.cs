@@ -10,7 +10,7 @@ namespace Domain
     public class Empleado : Persona
     {
         [Required]
-        public int NumEmpleado { get; set; }
+        public int IdEmpleado { get; set; }
         public virtual ICollection<Activo> Activos { get; set; }
 
 

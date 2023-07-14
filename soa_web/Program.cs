@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Repository.DBContext;
 using Service.IService;
 using Service.Service;
+using soa_web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlServer(connectionString));
+
+builder.Services.AddDbContext<SOA_MedioWebContext>(options =>
+    options.UseSqlServer(connectionString));
+
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddTransient<IEmployee, EmployeeService>();
 builder.Services.AddRazorPages();

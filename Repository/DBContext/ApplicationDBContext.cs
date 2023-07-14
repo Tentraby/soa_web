@@ -13,6 +13,8 @@ namespace Repository.DBContext
         public DbSet<Persona> personas { get; set; }
         public DbSet<Empleado> empleados{ get; set; }
 
+        public DbSet<Activo_Empleado> activo_Empleados { get; set; }
+
         public DbSet<Activo> activos { get; set; }
 
         public ApplicationDBContext(DbContextOptions options) : base(options) { }
