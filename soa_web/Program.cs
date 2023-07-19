@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Repository.DBContext;
 using Service.IService;
 using Service.Service;
+using Service.Services;
 using soa_web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 
 builder.Services.AddDbContext<SOA_MedioWebContext>(options =>
     options.UseSqlServer(connectionString));
+
 
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
