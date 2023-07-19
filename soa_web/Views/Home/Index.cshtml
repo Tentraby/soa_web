@@ -1,18 +1,30 @@
-﻿<!DOCTYPE html>
+﻿@model SOA_WEB_MVC.Models.LoginViewModel
+
+<!DOCTYPE html>
 <html>
-<br />
-<br />
 <head>
-    <link href="c:\users\santi\source\repos\soa_web\soa_web\views\home\stylesheet.css" rel="stylesheet" />
     <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="ruta_a_tu_archivo_css" />
 </head>
 <body>
     <div class="Login">
         <h2>Iniciar sesión</h2>
-        <form>
-            <input type="text" placeholder="Correo" required>
-            <input type="password" placeholder="Contraseña" required>
-            <button type="submit">Iniciar sesión</button>
+        <form method="post" asp-controller="Login" asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label for="Correo">Correo</label>
+                <input asp-for="Correo" class="form-control" required />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="Contraseña">Contraseña</label>
+                <input asp-for="Contraseña" class="form-control" type="password" required />
+                <span asp-validation-for="Contraseña" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
         </form>
     </div>
 </body>

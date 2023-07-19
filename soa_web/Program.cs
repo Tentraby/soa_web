@@ -14,8 +14,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddDbContext<SOA_MedioWebContext>(options =>
-    options.UseSqlServer(connectionString));
+
 
 
 
